@@ -51,6 +51,9 @@ instance Eq Domain where
     (Range xl xh) == (Range yl yh) = xl == yl && xh == yh
     xs == ys = elems xs == elems ys
 
+instance Semigroup Domain where
+    (<>) = mappend
+
 instance Monoid Domain where
     mappend = intersection
     mempty = maxDomain
